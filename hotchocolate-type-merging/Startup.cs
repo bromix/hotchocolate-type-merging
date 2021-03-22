@@ -27,6 +27,7 @@ namespace hotchocolate_type_merging
             services
             .AddGraphQLServer()
             .AddTypeExtension<Query>()
+            .AddTypeExtension<Album>()
             .AddRemoteSchema("almansi");
         }
 
