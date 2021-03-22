@@ -1,5 +1,8 @@
+using HotChocolate.Types;
+
 namespace hotchocolate_type_merging
 {
+    [ExtendObjectType(Name = "Query")]
     public class Query
     {
         public Book GetBook() =>
