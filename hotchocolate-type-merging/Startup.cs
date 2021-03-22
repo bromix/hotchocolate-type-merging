@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+// query{album(id: "1"){title}}
+
 namespace hotchocolate_type_merging
 {
     public class Startup
