@@ -24,16 +24,24 @@ namespace hotchocolate_type_merging
                 c.BaseAddress = new Uri("https://graphqlzero.almansi.me/api");
             });
 
+            /*
+            Setup local schema. The local schema provides some root
+            queries of its own and also extends a remove type (Ablum).
+            */
             services
             .AddGraphQLServer("myschema")
             .AddType<Query>();
 
-
+            /*
+            Add local and remote (stitch) schema.
+            The extension file will provide information about the
+            delegation of the extended type (custom field).
+            */
             services
             .AddGraphQLServer()
             .AddRemoteSchema("almansi")
-            .AddTypeExtensionsFromFile("./Extensions.graphql")
-            .AddLocalSchema("myschema");
+            .AddLocalSchema("myschema")
+            .AddTypeExtensionsFromFile("./Extensions.graphql");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

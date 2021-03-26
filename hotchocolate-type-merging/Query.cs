@@ -17,7 +17,7 @@ namespace hotchocolate_type_merging
 
         public string getMyCustomField(string id, string title)
         {
-            return "Hello";
+            return $"Hello {id} - {title}";
         }
     }
 }
