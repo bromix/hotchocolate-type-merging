@@ -2,7 +2,7 @@ using HotChocolate.Types;
 
 namespace hotchocolate_type_merging
 {
-    [ExtendObjectType(Name = "Query")]
+    //[ExtendObjectType(Name = "Query")]
     public class Query
     {
         public Book GetBook() =>
@@ -14,5 +14,10 @@ namespace hotchocolate_type_merging
                     Name = "Jon Skeet"
                 }
             };
+
+        public string getMyCustomField(string id, string title)
+        {
+            return "Hello";
+        }
     }
 }

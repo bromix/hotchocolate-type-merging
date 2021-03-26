@@ -1,0 +1,4 @@
+extend type Album {
+  myCustomField: String!
+  @delegate(schema: "myschema", path: "getMyCustomField(id: $fields:id, title: $fields:title)")
+}

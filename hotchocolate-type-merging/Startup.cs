@@ -25,10 +25,15 @@ namespace hotchocolate_type_merging
             });
 
             services
+            .AddGraphQLServer("myschema")
+            .AddType<Query>();
+
+
+            services
             .AddGraphQLServer()
-            .AddTypeExtension<Query>()
-            .AddTypeExtension<Album>()
-            .AddRemoteSchema("almansi");
+            .AddRemoteSchema("almansi")
+            .AddTypeExtensionsFromFile("./Extensions.graphql")
+            .AddLocalSchema("myschema");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
